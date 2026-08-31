@@ -99,8 +99,8 @@
             <p>Xiaotuan, Meituan’s AI assistant for local services, makes the requirement concrete. To turn an open-ended request into a decision-supporting recommendation, it iteratively retrieves and compares business-grounded information, reconciles relevant constraints, and updates later actions from intermediate observations and tool feedback. This workflow creates three evaluation challenges that outcome reporting alone cannot expose:</p>
             <ul class="reason-list">
               <li><strong>Challenge 01 — Errors can accumulate through a trajectory.</strong> A deviation in interpreting a request or selecting an action can compound through later tool use, even if the final response appears acceptable.</li>
-              <li><strong>Challenge 02 — A plausible response may not be grounded in the current service state.</strong> Search, supply, and availability evolve with real-world business conditions, so a recommendation must be accurate, timely, and actionable at the moment it is delivered.</li>
-              <li><strong>Challenge 03 — A turn can be correct in isolation yet fail the conversation.</strong> In a follow-up, a user may refer to an earlier option, add a constraint, or correct the assistant. Later service fails if it treats that message as standalone instead of resolving the reference and updating its understanding of the user’s need.</li>
+              <li><strong>Challenge 02 — A recommendation must reflect live business conditions.</strong> Search results, merchant supply, and availability change with the current business state. Because open-ended user needs can admit several reasonable paths, an answer that sounds acceptable may still fail to provide an accurate, timely, and actionable recommendation.</li>
+              <li><strong>Challenge 03 — Request-level success cannot establish sustained service quality.</strong> An ongoing interaction is more than a sequence of isolated requests. Each later turn may appear reasonable on its own while overlooking an earlier reference, constraint, or correction; over time, these locally plausible decisions can drift away from the user’s evolving goal.</li>
             </ul>
           </div>
           <figure class="case-figure">
@@ -452,5 +452,9 @@
         <p>University of Science and Technology of China · Meituan</p>
       </div>
     </footer>
+
+    <!-- Cloudflare Web Analytics -->
+    <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "f57509328ae9411ea1c254af696294d3"}'></script>
+    <!-- End Cloudflare Web Analytics -->
   </body>
 </html>
