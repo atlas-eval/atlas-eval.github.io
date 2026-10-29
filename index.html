@@ -5,10 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta
       name="description"
-      content="ATLAS is a dual-horizon diagnostic evaluation framework for industrial tool-use agents."
+      content="ATLAS diagnoses tool-use agents across request lifecycles and continued interaction. Calibrated signals guide iteration in Meituan Xiaotuan, validated by blinded human auditing and a 14-day online A/B test."
     >
     <meta name="theme-color" content="#f8fbfb">
-    <title>ATLAS — Dual-Horizon Diagnostic Evaluation</title>
+    <title>ATLAS: Dual-Horizon Diagnostic Evaluation for Tool-Use Agents in Meituan Xiaotuan</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23102b38'/%3E%3Ctext x='16' y='24' text-anchor='middle' fill='white' font-family='Arial,sans-serif' font-size='24' font-weight='700'%3EA%3C/text%3E%3C/svg%3E">
     <link rel="stylesheet" href="assets/css/styles.css">
     <script src="assets/js/main.js" defer></script>
   </head>
@@ -30,6 +31,8 @@
           <a href="#framework">Framework</a>
           <a href="#pathway">Iteration</a>
           <a href="#results">Validation</a>
+          <a href="#citation">Citation</a>
+          <a href="https://arxiv.org/abs/2608.30685" target="_blank" rel="noopener noreferrer">arXiv ↗</a>
           <a href="https://atlas.mynocode.host/" target="_blank" rel="noopener noreferrer">Explorer ↗</a>
         </div>
       </nav>
@@ -38,33 +41,38 @@
     <main id="main-content">
       <section class="hero shell" id="top" aria-labelledby="page-title">
         <div class="hero-copy">
-          <p class="hero-kicker">A diagnostic evaluation framework for industrial tool-use agents</p>
-          <h1 id="page-title" class="paper-title"><span>ATLAS</span>: Dual-Horizon Diagnostic Evaluation for Industrial Tool-Use Agents</h1>
+          <p class="hero-kicker">A diagnostic evaluation framework for industrial <span class="text-tail">tool-use agents</span></p>
+          <h1 id="page-title" class="paper-title"><span>ATLAS</span>: Dual-Horizon Diagnostic Evaluation for Tool-Use Agents in Meituan Xiaotuan</h1>
           <p class="hero-authors">
-            <span>Wei Chen<sup>1,*</sup></span><span>Peilun Zhou<sup>2,*,‡</sup></span><span>Zhaoyu Hu<sup>2</sup></span><span>Jiajun Chai<sup>2</sup></span><span>Zhongni Hou<sup>2</sup></span><span>Yufei Zhang<sup>2</sup></span><span>Derong Xu<sup>1</sup></span><span>Guojun Yin<sup>2,†</sup></span><span>Wei Lin<sup>2,†</sup></span><span>Zhi Zheng<sup>1,†</sup></span><span>Tong Xu<sup>1,†</sup></span>
+            <span>Wei Chen<sup>1,*</sup></span><span>Peilun Zhou<sup>2,*,‡</sup></span><span>Zhaoyu Hu<sup>2</sup></span><span>Jiajun Chai<sup>2</sup></span><span>Derong Xu<sup>1</sup></span><span>Zhongni Hou<sup>2</sup></span><span>Yufei Zhang<sup>2</sup></span><span>Guojun Yin<sup>2,†</sup></span><span>Wei Lin<sup>2,†</sup></span><span>Zhi Zheng<sup>1,†</sup></span><span>Tong Xu<sup>1,†</sup></span>
           </p>
           <div class="hero-affiliations">
             <span><sup>1</sup> State Key Laboratory of Cognitive Intelligence, University of Science and Technology of China</span>
             <span><sup>2</sup> Meituan</span>
           </div>
           <p class="hero-role-note"><span><sup>*</sup> Equal Contribution</span><span><sup>‡</sup> Project Leader</span><span><sup>†</sup> Corresponding Author</span></p>
+          <div class="paper-resources" aria-label="Paper resources">
+            <a class="button button-primary" href="https://arxiv.org/abs/2608.30685" target="_blank" rel="noopener noreferrer">Read on arXiv</a>
+            <a class="button button-secondary" href="#citation">Cite ATLAS</a>
+          </div>
+          <p class="publication-note">This page follows the revised report; the linked arXiv release will be updated when the revision is uploaded.</p>
           <div class="hero-abstract" aria-label="Abstract">
             <p class="hero-abstract-label">Abstract</p>
-            <p>Large language model agents are increasingly deployed in user-facing services that require iterative tool use under dynamic business conditions. Reliable evaluation must expose capability deficiencies, inform iteration priorities, and assess the effects of interventions.</p>
-            <p>Industrial agent service unfolds through the iterative trajectory of a current request and through continued interaction with a user. Reducing both to a final outcome can obscure where a deficiency emerges during execution and whether later service remains aligned with earlier context.</p>
-            <p>ATLAS is a dual-horizon diagnostic evaluation framework: trajectory-wise diagnostic signals relate observed deficiencies to execution locations and capability concerns, while user-wise signals assess whether service remains responsive across continued user interaction. Executable signals support calibrated evaluation, policy feedback, and reassessment.</p>
-            <p>On Meituan Xiaotuan, offline and online studies test this chain from diagnostic-signal fidelity to live-service outcomes.</p>
+            <p>LLM-based assistants on web-scale service platforms address local-service needs through multi-step planning and tool use. Under dynamic business conditions and evolving user needs, outcome-level evaluation offers limited evidence of where execution falls short, which quality or compliance requirement is unmet, or how service loses alignment over continued interaction.</p>
+            <p>ATLAS diagnoses two complementary horizons: within-turn, trajectory-wise signals examine the complete agent lifecycle triggered by a request across thinking and reflection, tool and skill execution, and response generation; across-turn, user-wise signals examine whether intent, constraints, and corrections carry forward across multiple lifecycles.</p>
+            <p>Rule-based checks and LLM judgments ground each signal in explicit evidence scopes and decision boundaries. LLM judges are calibrated on dynamically maintained business-log references, and selected judges are distilled into grouped compact models. Diagnostic profiles help developers attribute failures, prioritize workflow, data, or policy interventions, and reassess the resulting agent.</p>
+            <p>In Meituan Xiaotuan, a million-scale DAU local-services assistant, calibrated judges and distilled models achieve high diagnostic fidelity. A blinded human audit and a 14-day online A/B test with nearly two million users per arm confirm improved recommendation quality, answer read-through (<strong>+2.84%</strong>), and paid orders (<strong>+6.13%</strong>), leading to full production deployment.</p>
           </div>
           <div class="hero-guide" aria-label="Project guide">
             <div class="hero-guide-copy">
               <p class="kicker">Project guide</p>
-              <p>Read the research narrative below, or inspect the public signal implementation directly in the companion Explorer.</p>
+              <p>Read the research narrative below, or inspect the public signal implementation directly in the <span class="text-tail">companion Explorer.</span></p>
             </div>
             <ol class="hero-outline">
-              <li><a href="#why"><b>01</b><span><strong>Challenge</strong><small>Why outcome reporting is insufficient</small></span></a></li>
-              <li><a href="#framework"><b>02</b><span><strong>Dual-horizon framework</strong><small>What ATLAS evaluates</small></span></a></li>
-              <li><a href="#pathway"><b>03</b><span><strong>Signals to iteration</strong><small>How diagnosis becomes feedback</small></span></a></li>
-              <li><a href="#results"><b>04</b><span><strong>Validation</strong><small>From fidelity to live traffic</small></span></a></li>
+              <li><a href="#why"><b>01</b><span><strong>Challenge</strong><small>Why outcome reporting <span class="text-tail">is insufficient</span></small></span></a></li>
+              <li><a href="#framework"><b>02</b><span><strong>Dual-horizon framework</strong><small>What <span class="text-tail">ATLAS evaluates</span></small></span></a></li>
+              <li><a href="#pathway"><b>03</b><span><strong>Signals to iteration</strong><small>How diagnosis <span class="text-tail">guides interventions</span></small></span></a></li>
+              <li><a href="#results"><b>04</b><span><strong>Validation</strong><small>From fidelity to <span class="text-tail">live traffic</span></small></span></a></li>
             </ol>
             <a class="hero-explorer" href="https://atlas.mynocode.host/" target="_blank" rel="noopener noreferrer">
               <span>Companion resource</span>
@@ -78,43 +86,40 @@
       <section class="section shell why-section" id="why" aria-labelledby="why-title">
         <div class="section-intro">
           <p class="kicker">Why evaluation must diagnose</p>
-          <h2 id="why-title">Outcomes alone cannot guide agent iteration.</h2>
-          <p>Industrial tool-use agents interpret user goals, invoke external tools, and complete real-world tasks in user-facing products and business workflows. Their behavior depends on dynamic business evidence and, across continued use, on a user’s evolving context.</p>
-          <p>Development teams have finite capacity to improve and deploy capabilities. They need evidence that exposes where a service falls short and makes scenario-specific priorities explicit—not only an aggregate score for one system version.</p>
-          <p class="section-insight"><b>What outcome reporting hides</b><span>It cannot show whether a process failed during execution, whether a decision used current business evidence, or whether later service still responds to the evolving interaction.</span></p>
+          <h2 id="why-title">Outcome reporting alone is not enough for targeted iteration.</h2>
+          <p>Production tool-use agents combine reasoning, tool and skill execution, and responses grounded in live business supply. When service falls short, the cause may lie in the workflow, a tool interface, scenario coverage, or the policy—not just the <span class="text-tail">final answer.</span></p>
+          <p>With limited engineering and training resources, teams need diagnostic evidence to locate bottlenecks, choose focused interventions, and assess the <span class="text-tail">resulting changes.</span></p>
+          <p class="section-insight"><b>What outcome reporting hides</b><span>A final outcome may reveal that service failed without showing the responsible execution stage, the unmet quality or compliance requirement, or where alignment with user context was lost.</span></p>
         </div>
         <div class="iteration-decision-band" aria-label="Three iteration decisions">
-          <div class="iteration-decision-copy">
-            <p class="kicker">The iteration mandate</p>
-            <p>Diagnostic evidence must support three linked production decisions.</p>
-          </div>
+          <p class="iteration-prompt">Diagnostic evaluation should answer:</p>
           <ol class="iteration-decisions">
-            <li><b>01</b><span>What should improve?</span></li>
+            <li><b>01</b><span>Where does service fail?</span></li>
             <li><b>02</b><span>What should be prioritized?</span></li>
             <li><b>03</b><span>Did the intervention work?</span></li>
           </ol>
         </div>
-        <div class="why-grid">
-          <div class="why-copy">
-            <p>Xiaotuan, Meituan’s AI assistant for local services, makes the requirement concrete. To turn an open-ended request into a decision-supporting recommendation, it iteratively retrieves and compares business-grounded information, reconciles relevant constraints, and updates later actions from intermediate observations and tool feedback. This workflow creates three evaluation challenges that outcome reporting alone cannot expose:</p>
-            <ul class="reason-list">
-              <li><strong>Challenge 01 — Errors can accumulate through a trajectory.</strong> A deviation in interpreting a request or selecting an action can compound through later tool use, even if the final response appears acceptable.</li>
-              <li><strong>Challenge 02 — A recommendation must reflect live business conditions.</strong> Search results, merchant supply, and availability change with the current business state. Because open-ended user needs can admit several reasonable paths, an answer that sounds acceptable may still fail to provide an accurate, timely, and actionable recommendation.</li>
-              <li><strong>Challenge 03 — Request-level success cannot establish sustained service quality.</strong> An ongoing interaction is more than a sequence of isolated requests. Each later turn may appear reasonable on its own while overlooking an earlier reference, constraint, or correction; over time, these locally plausible decisions can drift away from the user’s evolving goal.</li>
-            </ul>
-          </div>
+        <div class="xiaotuan-example">
           <figure class="case-figure">
             <button class="paper-frame compact-frame image-zoom-trigger" type="button" data-image-zoom aria-label="Expand the Xiaotuan local-services interaction figure">
               <img
                 src="assets/images/xiaotuan_case.webp"
                 width="2800"
-                height="1903"
-                alt="A real Xiaotuan local-services interaction motivating an iterative service process."
+                height="2340"
+                alt="An illustrative multi-step workflow in Meituan Xiaotuan alongside the user-facing local-services response."
                 fetchpriority="high"
               >
             </button>
-            <figcaption>A real Xiaotuan local-services interaction. The assistant iteratively retrieves and compares business-grounded information before synthesizing a recommendation.</figcaption>
+            <figcaption>An example interaction in Meituan Xiaotuan: an illustrative multi-step workflow alongside the user-facing response. The assistant retrieves and compares live business evidence before <span class="text-tail">synthesizing a recommendation.</span></figcaption>
           </figure>
+          <div class="why-copy">
+            <p>Xiaotuan, Meituan’s AI assistant for local services, makes this need concrete. It interprets open-ended requests, retrieves live business information, and adjusts its actions using tool feedback before presenting grounded recommendations. The example illustrates the workflow behind the <span class="text-tail">user-facing response.</span></p>
+          </div>
+          <ul class="reason-list" aria-label="Three evaluation challenges">
+            <li><strong>Challenge 01 — Early errors can propagate across execution.</strong> A mistake in interpreting the request, rewriting a query, or choosing a tool can lead to an off-target response. The final answer alone does not reveal whether the cause lies in synthesis or an earlier execution step.</li>
+            <li><strong>Challenge 02 — Quality is multifaceted under dynamic supply.</strong> Merchant inventory, pricing, and availability change continuously, and open-ended requests admit multiple valid paths. A useful recommendation must jointly satisfy user constraints, supply facts, deal timeliness, logical consistency, and safety requirements rather than match a fixed reference answer.</li>
+            <li><strong>Challenge 03 — User context can drift across requests.</strong> An ongoing interaction is more than a sequence of isolated requests. Each later turn may appear reasonable on its own while overlooking an earlier reference, constraint, or correction; over time, these locally plausible decisions can drift away from the user’s evolving goal.</li>
+          </ul>
         </div>
         <p class="dual-horizon-bridge"><b>Why dual-horizon</b><span>The first two challenges concern the current request trajectory: ATLAS’s within-turn horizon inspects the execution and its use of current business evidence. The third concerns continued service: its across-turn horizon evaluates user-relevant state across complete lifecycles.</span></p>
       </section>
@@ -123,21 +128,21 @@
         <div class="shell">
           <div class="section-intro framework-intro">
             <p class="kicker">ATLAS’s central design</p>
-            <h2 id="framework-title">Two horizons for diagnosing agent service.</h2>
-            <p>Industrial agent service unfolds across two connected temporal scopes. ATLAS does not collapse them into one score: it retains distinct evidence for the complete trajectory triggered by a current request and for the continued interaction with one user.</p>
+            <h2 id="framework-title">Two horizons for diagnosing <span class="text-tail">agent service.</span></h2>
+            <p>ATLAS preserves two complementary views: the full trajectory of one request and the evolving user context across successive lifecycles. Rather than reporting only an overall outcome, it retains the evidence needed to locate and <span class="text-tail">interpret deficiencies.</span></p>
             <p class="section-insight"><b>Why the separation matters</b><span>Within-turn evaluation localizes a capability deficiency in an execution. Across-turn evaluation asks whether subsequent service remains responsive as user-relevant context evolves.</span></p>
           </div>
 
           <div class="horizon-pair">
             <article class="horizon horizon-within">
-              <p class="horizon-tag">Horizon 01 · Within-turn / trajectory-wise</p>
-              <h3>Localize a gap in one request.</h3>
-              <p>Examine the complete trajectory initiated by a request: thinking and reflection, tool or skill execution, updates after tool feedback, and response generation.</p>
+              <p class="horizon-tag">Horizon 01 · Within-turn <span class="text-tail">/ trajectory-wise</span></p>
+              <h3>Localize a gap in <span class="text-tail">one request.</span></h3>
+              <p>Examine the complete trajectory initiated by a request: thinking and reflection, tool or skill execution, updates after tool feedback, and <span class="text-tail">response generation.</span></p>
               <p class="horizon-note"><strong>Diagnostic question</strong><span>Where does a capability deficiency arise in this execution?</span></p>
             </article>
             <article class="horizon horizon-across">
-              <p class="horizon-tag">Horizon 02 · Across-turn / user-wise</p>
-              <h3>Assess responsiveness over time.</h3>
+              <p class="horizon-tag">Horizon 02 · Across-turn <span class="text-tail">/ user-wise</span></p>
+              <h3>Diagnose continuity across requests.</h3>
               <p>Examine whether referents, intent, constraints, and explicit corrections are carried forward, updated, and used across complete lifecycles.</p>
               <p class="horizon-note"><strong>Diagnostic question</strong><span>Does later service still respond to the user’s evolving context?</span></p>
             </article>
@@ -149,39 +154,56 @@
               <img
                 src="assets/images/atlas_dual_horizon_overview.webp"
                 width="2800"
-                height="1448"
+                height="1436"
                 alt="The ATLAS dual-horizon evaluation framework showing trajectory-wise within-turn evaluation and user-wise across-turn evaluation as complementary horizons."
                 fetchpriority="high"
               >
             </button>
-            <figcaption>The framework applies the two diagnostic horizons to agent service: trajectory-wise evidence for a current request and user-wise evidence across successive complete lifecycles.</figcaption>
+            <figcaption>The framework applies the two diagnostic horizons to agent service: trajectory-wise evidence for a current request and user-wise evidence across <span class="text-tail">successive complete lifecycles.</span></figcaption>
           </figure>
 
           <div class="diagnostic-layout">
             <div class="diagnostic-copy">
               <p class="kicker">Within-turn diagnostic structure</p>
               <h3>How the within-turn horizon localizes a gap.</h3>
-              <p>Once a current-request trajectory is in scope, evaluation must retain both where behavior was observed and how it fell short of the task requirement. This structure expands only the within-turn horizon along those two complementary axes.</p>
+              <figure class="taxonomy-figure">
+                <div class="figure-label"><span>Within-turn diagnostic structure</span><span>Execution location × <span class="text-tail">capability concern</span></span></div>
+                <button class="paper-frame compact-frame image-zoom-trigger" type="button" data-image-zoom aria-label="Expand the within-turn diagnostic map">
+                  <img
+                    src="assets/images/atlas_taxonomy.webp"
+                    width="2800"
+                    height="1618"
+                    alt="ATLAS within-turn diagnostic structure organized by execution locations and capability concerns, with Norms and Compliance as an independent guardrail."
+                    loading="lazy"
+                  >
+                </button>
+              </figure>
+              <p>Within a request, ATLAS records both the execution stage where behavior occurs and the capability requirement it fails to meet. These two axes organize the within-turn diagnostic matrix.</p>
               <p class="diagnostic-note">Across-turn stays outside this matrix by design: it evaluates relations among complete lifecycles and the evolving user context.</p>
               <dl class="diagnostic-terms">
-                <div><dt>Execution location</dt><dd>Thinking &amp; Reflection · Tool &amp; Skill Execution · Response Generation</dd></div>
-                <div><dt>Capability concern</dt><dd>Relevance · Factuality · Timeliness · Reliability · Intent &amp; Planning</dd></div>
+                <div><dt>Execution location</dt><dd>Thinking &amp; Reflection · Tool &amp; Skill Execution · <span class="text-tail">Response Generation</span></dd></div>
+                <div><dt>Capability concern</dt><dd>Relevance · Factuality · Timeliness · Reliability · <span class="text-tail">Intent &amp; Planning</span></dd></div>
                 <div><dt>Guardrail</dt><dd>Norms &amp; Compliance covers safety, privacy, compliance, and structural validity.</dd></div>
               </dl>
             </div>
-            <figure class="taxonomy-figure">
-              <div class="figure-label"><span>Within-turn diagnostic structure</span><span>Execution location × capability concern</span></div>
-              <button class="paper-frame compact-frame image-zoom-trigger" type="button" data-image-zoom aria-label="Expand the within-turn diagnostic map">
+          </div>
+          <section class="fault-attribution" id="fault-attribution" aria-labelledby="attribution-title">
+            <h3 id="attribution-title">Trace a symptom to its source.</h3>
+            <figure class="attribution-figure">
+              <button class="paper-frame compact-frame image-zoom-trigger" type="button" data-image-zoom aria-label="Expand the cross-stage fault attribution example">
                 <img
-                  src="assets/images/atlas_taxonomy.webp"
-                width="2800"
-                height="1615"
-                alt="ATLAS within-turn diagnostic structure organized by execution locations and capability concerns, with Norms and Compliance as an independent guardrail."
-                fetchpriority="high"
+                  src="assets/images/atlas_diagnostic_evidence.webp"
+                  width="2800"
+                  height="1986"
+                  alt="A non-dessert cake request is rewritten as egg-burger and beef-pie searches. ATLAS traces the mismatched recommendation back through Rewrite Validity and Search Intent Understanding signals."
+                  loading="lazy"
                 >
               </button>
+              <figcaption>Cross-stage fault attribution from the revised report: distinguish the off-intent recommendation from the upstream interpretation and rewrite errors <span class="text-tail">that produced it.</span></figcaption>
             </figure>
-          </div>
+            <p>A user asks for non-dessert cakes, such as fried-chicken cakes or beef cakes. The agent reinterprets these as egg burgers and beef pies, searches for the substituted items, and presents the resulting supply as a match. The final response reflects the retrieved items, but those items no longer preserve the original request.</p>
+            <p>ATLAS starts from the visible recommendation mismatch and follows the evidence upstream: response-level Supply Relevance flags the symptom, while Rewrite Validity and Search Intent Understanding locate the earlier query-rewrite and intent-understanding errors. The distinction helps developers target the execution bottleneck rather than only rewrite the final answer.</p>
+          </section>
         </div>
       </section>
 
@@ -189,45 +211,45 @@
         <div class="shell">
           <div class="section-intro pathway-intro">
             <p class="kicker">From diagnosis to iteration</p>
-            <h2 id="pathway-title">From diagnostic signals to feedback.</h2>
-            <p>The structure becomes operational only when each signal specifies the behavior to assess, the evidence it may use, and the boundary for a deficient outcome. ATLAS then calibrates those decisions, scales selected signals where needed, and reuses them as policy feedback before reassessing the updated policy in the same framework.</p>
+            <h2 id="pathway-title">From diagnostic signals to <span class="text-tail">targeted iteration.</span></h2>
+            <p>ATLAS turns evidence-bound signals into a diagnostic profile. Developers use that profile to select workflow, data, or policy interventions, then reassess the agent. Rolling calibration and grouped distillation make the signals reliable and practical at scale; selected signals can also provide gated training feedback when policy optimization is the <span class="text-tail">chosen intervention.</span></p>
             <p class="section-insight"><b>The semantic thread</b><span>A signal’s target, evidence scope, and decision boundary are established before calibration and retained when the resulting policy is evaluated again.</span></p>
           </div>
 
           <div class="pathway-grid">
-            <div class="pathway-copy">
-              <ol class="pathway-list">
-                <li>
-                  <span>01</span>
-                  <div><strong>Specify the signal</strong><p>For each behavior, define the target, admissible evidence, decision boundary, and reporting semantics. Use rules when the boundary is programmatic and an LLM judge when it requires semantic assessment.</p></div>
-                </li>
-                <li>
-                  <span>02</span>
-                  <div><strong>Calibrate LLM-based signals</strong><p>Evaluate each signal-specific judge against high-confidence references from real business logs. Refine evidence binding, exemptions, and decision criteria until it reproduces the intended boundary reliably.</p></div>
-                </li>
-                <li>
-                  <span>03</span>
-                  <div><strong>Make selected signals efficient</strong><p>Selected compatible LLM-based signals can be distilled into lower-latency, lower-cost diagnostic models that retain signal-specific decision behavior.</p></div>
-                </li>
-                <li>
-                  <span>04</span>
-                  <div><strong>Optimize, then reevaluate</strong><p>Selected calibrated signals provide multidimensional feedback for policy optimization. Assess the updated policy again with trajectory-wise and user-wise evidence.</p></div>
-                </li>
-              </ol>
-              <p class="pathway-boundary"><strong>A diagnostic result is not an automatic product decision.</strong> It identifies a candidate capability deficiency; product context and deployment constraints still determine priority and intervention.</p>
-            </div>
             <figure class="pipeline-figure">
               <button class="paper-frame image-zoom-trigger" type="button" data-image-zoom aria-label="Expand the ATLAS diagnostic-signal implementation pathway figure">
                 <img
                   src="assets/images/atlas_diagnostic_pipeline.webp"
-                  width="2562"
+                  width="2564"
                   height="2800"
-                  alt="ATLAS diagnostic-signal implementation and optimization pathway, connecting diagnostic structure and calibration with trajectory evaluation and policy optimization."
-                  fetchpriority="high"
+                  alt="ATLAS connects rule checks, rolling judge calibration, and grouped model distillation to diagnostic profiles, targeted interventions, and reassessment."
+                  loading="lazy"
                 >
               </button>
-              <figcaption>The diagnostic structure guides signal construction and calibration; selected calibrated signals support policy feedback and subsequent reassessment.</figcaption>
+              <figcaption>ATLAS connects rule checks, rolling judge calibration, and grouped model distillation to diagnostic profiles, targeted interventions, <span class="text-tail">and reassessment.</span></figcaption>
             </figure>
+            <div class="pathway-copy">
+              <ol class="pathway-list">
+                <li>
+                  <span>01</span>
+                  <div><strong>Specify the signal</strong><p>Each signal binds a specific behavior to admissible evidence and a decision rule. Programmatic checks handle deterministic cases; calibrated LLM judges handle semantic ones. Outputs are pass/fail by default, while quantitative signals are derived from local judgments and normalized.</p></div>
+                </li>
+                <li>
+                  <span>02</span>
+                  <div><strong>Calibrate and maintain the boundary</strong><p>Dynamically maintain about 1,000 references per LLM-based diagnostic signal from a rolling six-month log window. Stratify by business scenario, request complexity, and interaction type; split by original conversation into calibration and held-out test sets. Refine on the calibration split, then freeze the interface before testing.</p></div>
+                </li>
+                <li>
+                  <span>03</span>
+                  <div><strong>Distill compatible signals together</strong><p>Group selected signals by execution dimension, capability concern, and input–output form. Teacher-supervised compact models retain calibrated decisions while avoiding fragmented per-signal deployments or one shared model with incompatible evidence forms.</p></div>
+                </li>
+                <li>
+                  <span>04</span>
+                  <div><strong>Choose an intervention, then reassess</strong><p>Diagnostic profiles guide human-in-the-loop workflow refinement, targeted data curation, or policy optimization. The Xiaotuan iteration reuses selected signals as GRPO feedback with Norms &amp; Compliance as a hard training-time gate; reassessment combines diagnostic replay, independent human auditing, and online A/B testing.</p></div>
+                </li>
+              </ol>
+              <p class="pathway-boundary"><strong>A diagnostic result is not an automatic product decision.</strong> It identifies a candidate capability deficiency; product context and deployment constraints still determine priority and intervention.</p>
+            </div>
           </div>
 
         </div>
@@ -238,7 +260,7 @@
           <div class="inventory-band-copy">
             <p class="kicker">Companion resource · Public signal inventory</p>
             <h2 id="inventory-title">Inspect individual signals.</h2>
-            <p>The method above defines how signals are specified, calibrated, scaled, and reused for iteration. The public Signal Explorer exposes the trajectory-wise and user-wise signals that instantiate that method, each with a target, evidence scope, decision boundary, and reporting semantics.</p>
+            <p>The method above defines how signals are specified, calibrated, scaled, and reused for iteration. The public Signal Explorer exposes the trajectory-wise and user-wise signals that instantiate that method, each with a target, evidence scope, decision boundary, and <span class="text-tail">reporting semantics.</span></p>
             <p class="inventory-emphasis"><b>Use it as a reference</b><span>Move from the dual-horizon structure on this page to individual signal definitions and the evidence each decision may use.</span></p>
             <a class="button button-primary" href="https://atlas.mynocode.host/" target="_blank" rel="noopener noreferrer">Open the Signal Explorer <span aria-hidden="true">↗</span></a>
             <p class="inventory-band-note">Browse the inventory for signal-level detail, then continue to the validation evidence below.</p>
@@ -254,7 +276,7 @@
                 fetchpriority="high"
               >
             </a>
-            <figcaption><a href="https://atlas.mynocode.host/" target="_blank" rel="noopener noreferrer">Open the public ATLAS Signal Explorer ↗</a></figcaption>
+            <figcaption><a href="https://atlas.mynocode.host/" target="_blank" rel="noopener noreferrer">Open the public ATLAS <span class="text-tail">Signal Explorer ↗</span></a></figcaption>
           </figure>
         </div>
       </section>
@@ -264,26 +286,26 @@
           <div class="section-intro results-intro">
             <p class="kicker">Validation on Meituan Xiaotuan</p>
             <h2 id="results-title">A validation chain from signal decisions to live service.</h2>
-            <p>The experiments test a connected chain: whether diagnostic signals implement their intended decisions, whether selected signals can run efficiently at scale, whether their feedback improves service under deployment-aligned replay, and whether those gains transfer to live traffic.</p>
+            <p>Four research questions test diagnostic fidelity, scalable distillation, independently audited recommendation quality, and impact on live user engagement and transactions. Pre-deployment diagnostic replay supplies complementary evidence of where <span class="text-tail">execution improves.</span></p>
           </div>
 
           <ol class="validation-chain" aria-label="ATLAS validation chain">
-            <li><b>01</b><span><strong>Judge interfaces</strong><small>Can signal boundaries be reproduced?</small></span></li>
-            <li><b>02</b><span><strong>Efficient models</strong><small>Can selected signals run at scale?</small></span></li>
-            <li><b>03</b><span><strong>Offline replay</strong><small>Does feedback improve replayed service?</small></span></li>
-            <li><b>04</b><span><strong>Online A/B &amp; audit</strong><small>Do gains reach live traffic?</small></span></li>
+            <li><b>01</b><span><strong>Judge interfaces</strong><small>Can signal boundaries <span class="text-tail">be reproduced?</span></small></span></li>
+            <li><b>02</b><span><strong>Efficient models</strong><small>Can selected signals run <span class="text-tail">at scale?</span></small></span></li>
+            <li><b>03</b><span><strong>Blinded human audit</strong><small>Does independent review <span class="text-tail">confirm quality?</span></small></span></li>
+            <li><b>04</b><span><strong>14-day online A/B</strong><small>Do gains reach <span class="text-tail">live traffic?</span></small></span></li>
           </ol>
 
           <div class="validation-intro">
             <p class="kicker">Experimental setting</p>
-            <p>All studies use mutually query-disjoint data from real Xiaotuan production traffic. High-confidence real-log references calibrate and evaluate 41 LLM-based signals; separate data train 17 efficient diagnostic models. Policy evaluation replays about 2,000 queries through production-facing tools with live business data, while optimization uses a separate 10,000-query set.</p>
+            <p>Datasets come from de-identified Xiaotuan production logs over a six-month window and are separated by original conversation. The diagnostic benchmark covers 41 LLM-based signals with about 1,000 instances per signal, split 1:1 for calibration and held-out testing. Grouped Qwen3.5-9B models cover 17 selected signals. The downstream study optimizes Qwen3.6-35B-A3B on about 10,000 requests and uses 1,000 paired queries for blinded human review; supplementary diagnostic replay covers <span class="text-tail">2,000 requests.</span></p>
           </div>
 
           <div class="foundation-results">
             <article class="rq-panel rq1-panel">
               <div class="rq-heading">
-                <p class="kicker">Study 01 · Judge interfaces</p>
-                <h3>Can an LLM judge reproduce a signal’s intended decision boundary?</h3>
+                <p class="kicker">Study 01 · <span class="text-tail">Judge interfaces</span></p>
+                <h3>Can an LLM judge reproduce a signal’s intended <span class="text-tail">decision boundary?</span></h3>
                 <dl class="study-meta">
                   <div><dt>Purpose</dt><dd>A diagnostic signal is useful only if its semantic judgment implements the intended boundary.</dd></div>
                   <div><dt>How</dt><dd>Four judge interfaces share the same DeepSeek-V4-Pro backbone and are evaluated with F1 on high-confidence references for 41 LLM-based signals from real Xiaotuan logs.</dd></div>
@@ -291,7 +313,7 @@
               </div>
               <div class="table-scroll" tabindex="0" aria-label="Average F1 results for LLM judge interfaces">
                 <table class="results-table judge-table">
-                  <caption>Average F1 across comparable LLM-based diagnostic signals.</caption>
+                  <caption>Held-out F1 for 41 LLM-based signals; group columns report unweighted means.</caption>
                   <thead>
                     <tr><th scope="col">Method</th><th scope="col">Rel.</th><th scope="col">Fact.</th><th scope="col">Time.</th><th scope="col">Reliab.</th><th scope="col">Intent</th><th scope="col">N&amp;C</th><th scope="col">User-wise</th><th scope="col">Overall</th></tr>
                   </thead>
@@ -299,14 +321,15 @@
                     <tr><th scope="row">Direct Judge</th><td>0.831</td><td>0.842</td><td>0.691</td><td>0.811</td><td>0.768</td><td>0.813</td><td>0.784</td><td>0.800</td></tr>
                     <tr><th scope="row">Static Rubric</th><td>0.843</td><td>0.853</td><td>0.849</td><td>0.775</td><td>0.811</td><td>0.876</td><td>0.761</td><td>0.826</td></tr>
                     <tr><th scope="row">Curated Rubric</th><td>0.885</td><td>0.905</td><td>0.838</td><td>0.808</td><td>0.843</td><td>0.932</td><td>0.880</td><td>0.877</td></tr>
-                    <tr class="best-row"><th scope="row">ATLAS Judge</th><td>0.939</td><td>0.956</td><td>0.961</td><td>0.972</td><td>0.937</td><td>0.984</td><td>0.953</td><td>0.952</td></tr>
+                    <tr class="best-row"><th scope="row">ATLAS Judge</th><td>0.939</td><td>0.956</td><td>0.961</td><td>0.972</td><td>0.947</td><td>0.984</td><td>0.953</td><td>0.954</td></tr>
                   </tbody>
                 </table>
               </div>
+              <p class="table-hint">Swipe or scroll horizontally to view all result columns.</p>
               <div class="result-finding">
-                <p><b>Finding</b><span>ATLAS Judge is strongest in every reported group, reaching <strong>0.952 overall F1</strong>; calibrated evidence binding and boundary control faithfully implement the diagnostic decisions.</span></p>
-                <p class="metric-legend"><b>Columns</b><span>Rel. — Relevance · Fact. — Factuality · Time. — Timeliness · Reliab. — Reliability · N&amp;C — Norms &amp; Compliance</span></p>
-                <p class="metric-qualification">The comparison covers LLM-based signals; rule-based signals follow their programmatic specifications.</p>
+                <p><b>Finding</b><span>ATLAS Judge is strongest in every reported group, reaching <strong>0.954 overall F1</strong>; calibrated evidence binding and boundary control faithfully implement the diagnostic decisions.</span></p>
+                <p class="metric-legend"><b>Columns</b><span>Rel. — Relevance · Fact. — Factuality · Time. — Timeliness · Reliab. — Reliability · N&amp;C — <span class="text-tail">Norms &amp; Compliance</span></span></p>
+                <p class="metric-qualification">The comparison covers LLM-based signals; rule-based signals follow their <span class="text-tail">programmatic specifications.</span></p>
               </div>
             </article>
 
@@ -316,12 +339,12 @@
                 <h3>Can selected signals retain their decision behavior in a compact model?</h3>
                 <dl class="study-meta">
                   <div><dt>Purpose</dt><dd>High-capacity LLM judges are costly to invoke repeatedly at scale.</dd></div>
-                  <div><dt>How</dt><dd>We distill 17 selected LLM-based signals onto Qwen3.5-9B and compare their F1 against the same high-confidence references, the untuned 9B backbone, and larger open baselines.</dd></div>
+                  <div><dt>How</dt><dd>Grouped Qwen3.5-9B diagnostic models cover 17 high-frequency LLM-based signals. We compare held-out F1 with the untuned 9B backbone and larger open baselines, using evaluation instances separated from distillation training by <span class="text-tail">original conversation.</span></dd></div>
                 </dl>
               </div>
               <div class="table-scroll" tabindex="0" aria-label="Group-average F1 results for efficient diagnostic models">
                 <table class="results-table distill-table">
-                  <caption>Group-average F1 (%) for 17 selected diagnostic signals.</caption>
+                  <caption>Held-out F1 (%) for 17 selected signals; group rows report unweighted means.</caption>
                   <thead>
                     <tr>
                       <th scope="col">Signal group</th>
@@ -342,9 +365,10 @@
                   </tbody>
                 </table>
               </div>
+              <p class="table-hint">Swipe or scroll horizontally to view all result columns.</p>
               <div class="result-finding">
-                <p><b>Finding</b><span>The distilled 9B model reaches <strong>94.6% overall F1</strong>, a <strong>+13.6-point</strong> gain over its untuned 9B backbone, showing that selected calibrated decisions can be deployed more efficiently.</span></p>
-                <p class="metric-qualification">DeepSeek-V4-Pro is the high-capacity reference interface. Δ is the absolute gain over Qwen3.5-9B.</p>
+                <p><b>Finding</b><span>The grouped 9B models reach <strong>94.6% overall F1</strong>, a <strong>+13.6-point</strong> gain over the untuned 9B backbone, outperforming the larger open baselines through calibrated <span class="text-tail">decision-boundary transfer.</span></span></p>
+                <p class="metric-qualification">DeepSeek-V4-Pro is the high-capacity reference interface. Δ is the absolute gain <span class="text-tail">over Qwen3.5-9B.</span></p>
               </div>
             </article>
           </div>
@@ -354,69 +378,84 @@
             <h3>Does diagnostic feedback improve service?</h3>
           </div>
 
-          <div class="offline-grid">
-            <figure class="offline-figure">
-              <button class="paper-frame compact-frame image-zoom-trigger" type="button" data-image-zoom aria-label="Expand the offline replay evaluation figure">
-                <img
-                  src="assets/images/offline_eval_blocks.webp"
-                  width="2800"
-                  height="1772"
-                  alt="Offline replay evaluation showing the ATLAS-optimized policy with the highest reported scores across within-turn groups, the Norms and Compliance guardrail, and the user-wise layer."
-                  fetchpriority="high"
-                >
-              </button>
-              <figcaption>Offline replay covers three within-turn execution dimensions, the Norms &amp; Compliance guardrail, and the user-wise layer.</figcaption>
-            </figure>
-            <div class="offline-copy">
-              <p class="kicker">Study 03 · Offline replay</p>
-              <h3>Does feedback improve replayed service?</h3>
-              <dl class="study-meta">
-                <div><dt>Purpose</dt><dd>Test whether selected calibrated signals provide useful policy feedback beyond improving the final response alone.</dd></div>
-                <div><dt>How</dt><dd>Real Xiaotuan queries are replayed to each policy; production-facing tools resolve merchants, POIs, and supply from live business data at execution time.</dd></div>
+          <div class="online-results">
+            <article class="metrics-panel audit-metrics">
+              <div class="metrics-heading">
+                <p class="kicker">Study 03 · Blinded human audit · 1,000 paired queries</p>
+                <h3>Does independent review confirm <span class="text-tail">recommendation quality?</span></h3>
+                <dl class="study-meta">
+                  <div><dt>Purpose</dt><dd>Evaluate response quality independently of ATLAS’s own judges, before online rollout.</dd></div>
+                  <div><dt>How</dt><dd>Both agents generate fresh tool-use trajectories for the same 1,000 production queries and prior dialogue context, sharing the Qwen3.6-35B-A3B backbone, tools, and harness. Blinded domain annotators perform independent dual review against the request and retrieved supply; experts <span class="text-tail">adjudicate disagreements.</span></dd></div>
+                </dl>
+              </div>
+              <p class="metrics-unit">Absolute rate changes versus the deployed baseline (percentage points, pp)</p>
+              <dl class="metrics-grid audit-grid">
+                <div><dt>Response–supply relevance</dt><dd>+6.2 <small>pp</small></dd></div>
+                <div><dt>P0 hallucination rate</dt><dd>−6.9 <small>pp</small></dd></div>
+                <div><dt>ID hallucination rate</dt><dd>−2.0 <small>pp</small></dd></div>
               </dl>
-              <p class="study-finding"><strong>Finding.</strong> The ATLAS-optimized policy has the highest reported mean score in every shown group, including Tool &amp; Skill Execution and the user-wise layer, while Norms &amp; Compliance remains high.</p>
-            </div>
+              <p class="audit-definition">Relevance checks primary intent and key constraints. P0 hallucination flags unsupported core conclusions or key facts; ID hallucination flags fabricated, mismatched, or untraceable recommendation IDs. Lower hallucination rates are better.</p>
+            </article>
+            <article class="metrics-panel product-metrics">
+              <div class="metrics-heading">
+                <p class="kicker">Study 04 · Online A/B · 14 days</p>
+                <h3>Do quality gains reach live users <span class="text-tail">and transactions?</span></h3>
+                <dl class="study-meta">
+                  <div><dt>Purpose</dt><dd>Assess the ATLAS-guided agent against the deployed production baseline on live Xiaotuan traffic.</dd></div>
+                  <div><dt>How</dt><dd>August 14–27, with nearly two million enrolled users per arm, user-level hash bucketing, equal traffic splits, concurrent evaluation, and two-sided statistical testing.</dd></div>
+                </dl>
+              </div>
+              <div class="experiment-scope" aria-label="Online experiment scale">
+                <span><strong>14 days</strong> August 14–27</span>
+                <span><strong>≈2M users / arm</strong> Equal traffic splits</span>
+                <span><strong>95% confidence intervals</strong> Two-sided testing</span>
+              </div>
+              <div class="table-scroll" tabindex="0" aria-label="Online A/B results; scroll horizontally on small screens">
+                <table class="results-table online-table">
+                  <caption>Relative changes versus the deployed baseline.</caption>
+                  <thead>
+                    <tr><th scope="col">Online metric</th><th scope="col">Relative Δ</th><th scope="col">p-value</th><th scope="col">95% CI</th></tr>
+                  </thead>
+                  <tbody>
+                    <tr><th scope="row">AI answer read-through rate</th><td class="metric-gain">+2.84%</td><td>&lt;0.0001</td><td>[+2.27%, +3.38%]</td></tr>
+                    <tr><th scope="row">Effective QV</th><td class="metric-gain">+0.89%</td><td>&lt;0.0001</td><td>[+0.56%, +1.23%]</td></tr>
+                    <tr><th scope="row">Merchant-card exposure QV</th><td class="metric-gain">+4.23%</td><td>&lt;0.0001</td><td>[+3.81%, +4.66%]</td></tr>
+                    <tr><th scope="row">Paid order count</th><td class="metric-gain">+6.13%</td><td>&lt;0.0001</td><td>[+2.89%, +8.67%]</td></tr>
+                    <tr><th scope="row">Paid GTV</th><td class="metric-gain">+4.51%</td><td>0.1355</td><td>[−1.41%, +10.43%]</td></tr>
+                    <tr><th scope="row">5-second session exit rate</th><td class="metric-gain">−1.29%</td><td>&lt;0.0001</td><td>[−1.45%, −1.19%]</td></tr>
+                  </tbody>
+                </table>
+              </div>
+              <p class="table-hint">Swipe or scroll horizontally to view p-values and confidence intervals.</p>
+              <div class="result-finding">
+                <p><b>Finding</b><span>Engagement, merchant-card exposure, and paid orders improve significantly, while early exits decline. Together with the blinded audit, these results support the improved agent’s rollout to <strong>all production traffic</strong>.</span></p>
+                <p class="metric-qualification">Effective QV counts valid AI-assistant visits satisfying the platform’s effectiveness criterion; merchant-card exposure QV counts visits with merchant or supply cards shown to the user. Paid orders and paid gross transaction volume (GTV) are attributed to <span class="text-tail">AI-assistant interactions.</span></p>
+              </div>
+            </article>
           </div>
 
-          <div class="online-results">
-            <div class="metrics-panel product-metrics">
-              <div class="metrics-heading">
-                <p class="kicker">Study 04 · Online A/B &amp; audit · 10% treatment</p>
-                <h3>Do replay gains transfer to production?</h3>
-                <dl class="study-meta">
-                  <div><dt>Purpose</dt><dd>Test whether gains observed under deployment-aligned replay transfer to production service.</dd></div>
-                  <div><dt>How</dt><dd>The optimized policy is compared concurrently with the deployed version from June 27 to June 29 on a fixed 10% slice of live traffic. Every reported product metric moves in the favorable direction.</dd></div>
-                </dl>
+          <details class="replay-details" open>
+            <summary>Supplementary evidence: pre-deployment diagnostic replay <span>2,000 production requests</span></summary>
+            <div class="offline-grid">
+              <figure class="offline-figure">
+                <button class="paper-frame compact-frame image-zoom-trigger" type="button" data-image-zoom aria-label="Expand the offline replay evaluation figure">
+                  <img
+                    src="assets/images/offline_eval_blocks.webp"
+                    width="2800"
+                    height="1772"
+                    alt="Pre-deployment replay: the ATLAS-guided policy has the highest mean diagnostic score in every reported execution group, guardrail, and user-wise layer."
+                    loading="lazy"
+                  >
+                </button>
+                <figcaption>Additional diagnostic replay breakdown from the <span class="text-tail">revised report’s appendix.</span></figcaption>
+              </figure>
+              <div class="offline-copy">
+                <h3>Where does <span class="text-tail">execution improve?</span></h3>
+                <p>Each agent executes 2,000 conversation-disjoint production requests through production interfaces against live business supply. The ATLAS-guided policy has the highest mean score in every reported group, with the largest gain in Tool &amp; Skill Execution.</p>
+                <p class="study-finding">Replay also shows improved user-wise performance and a high Norms &amp; Compliance score. These are ATLAS diagnostic scores, not an independent quality assessment; the blinded human audit and online A/B test provide that complementary validation.</p>
               </div>
-              <p class="metrics-unit">Δ values are relative changes versus the deployed version (%)</p>
-              <dl class="metrics-grid">
-                <div><dt>AI message read-through rate</dt><dd>+0.92</dd></div>
-                <div><dt>Per-user dwell time</dt><dd>+1.26</dd></div>
-                <div><dt>AI search query volume</dt><dd>+0.76</dd></div>
-                <div><dt>Effective QV</dt><dd>+0.50</dd></div>
-                <div><dt>Session follow-up rate</dt><dd>+6.9</dd></div>
-                <div><dt>Paid GTV</dt><dd>+7.32</dd></div>
-                <div><dt>5-second session exit rate</dt><dd>−0.31</dd></div>
-              </dl>
             </div>
-            <div class="metrics-panel audit-metrics">
-              <div class="metrics-heading">
-                <p class="kicker">Companion audit · 1,000 responses</p>
-                <h3>Do audits confirm outcomes?</h3>
-                <dl class="study-meta">
-                  <div><dt>Purpose</dt><dd>Check whether sampled response quality shifts in the same direction as product outcomes.</dd></div>
-                  <div><dt>How</dt><dd>A 1,000-response audit from the same experiment window measures response–supply relevance and hallucination rates.</dd></div>
-                </dl>
-              </div>
-              <p class="metrics-unit">Δ values are absolute rate changes (pp)</p>
-              <dl class="metrics-grid audit-grid">
-                <div><dt>Response–supply relevance</dt><dd>+6.2</dd></div>
-                <div><dt>P0 hallucination rate</dt><dd>−6.9</dd></div>
-                <div><dt>ID hallucination rate</dt><dd>−2.0</dd></div>
-              </dl>
-            </div>
-          </div>
-          <p class="results-note"><strong>Interpretation note:</strong> Session follow-up is a session-level indicator of continued interaction, not a single user-wise signal.</p>
+          </details>
         </div>
       </section>
 
@@ -424,18 +463,43 @@
         <div class="shell takeaway-grid">
           <div>
             <p class="kicker">Conclusion</p>
-            <h2 id="takeaway-title">Evaluation as evidence for targeted iteration.</h2>
+            <h2 id="takeaway-title">Evaluation as evidence for <span class="text-tail">targeted iteration.</span></h2>
           </div>
           <div class="takeaway-copy">
             <p>ATLAS is a dual-horizon diagnostic framework for industrial tool-use agents. Trajectory-wise signals localize capability gaps in a current execution; user-wise signals assess whether subsequent service remains responsive as interaction context evolves.</p>
-            <p>Fine-grained, evidence-bound signals make both views executable. Selected calibrated signals support scalable evaluation and multidimensional policy feedback, while the same framework reassesses the resulting policy.</p>
-            <p>On Xiaotuan, this chain is validated from judge fidelity and efficient diagnostic models to offline replay, online product outcomes, and sampled human-audit quality.</p>
+            <p>Evidence-bound signals, rolling reference calibration, and grouped compact models make diagnosis executable at scale. Diagnostic profiles guide human-in-the-loop workflow, data, and policy interventions; the framework then reassesses the updated agent.</p>
+            <p>On Xiaotuan, calibrated judge fidelity, compact-model distillation, blinded human auditing, and a 14-day online A/B test connect diagnosis to improved recommendation quality, engagement, and paid orders. The ATLAS-guided agent is deployed to all production traffic.</p>
             <div class="takeaway-links">
               <a class="button button-primary" href="https://atlas.mynocode.host/" target="_blank" rel="noopener noreferrer">Open Signal Explorer <span aria-hidden="true">↗</span></a>
+              <a class="text-link" href="https://arxiv.org/abs/2608.30685" target="_blank" rel="noopener noreferrer">Read the paper</a>
               <a class="text-link" href="#top">Back to top <span aria-hidden="true">↑</span></a>
             </div>
           </div>
         </div>
+      </section>
+
+      <section class="section shell citation-section" id="citation" aria-labelledby="citation-title">
+        <div class="section-intro">
+          <p class="kicker">Reference</p>
+          <h2 id="citation-title">Cite ATLAS.</h2>
+          <p>If ATLAS informs your research, please cite the paper using the <span class="text-tail">BibTeX entry below.</span></p>
+        </div>
+        <div class="citation-toolbar">
+          <a class="text-link" href="https://arxiv.org/abs/2608.30685" target="_blank" rel="noopener noreferrer">arXiv:2608.30685</a>
+          <button class="button button-secondary" type="button" data-copy-citation aria-describedby="citation-status">Copy BibTeX</button>
+        </div>
+        <pre class="citation-code" tabindex="0" aria-label="BibTeX citation"><code id="bibtex">@misc{chen2026atlas,
+  title = {{ATLAS}: Dual-Horizon Diagnostic Evaluation for Tool-Use Agents in Meituan Xiaotuan},
+  author = {Wei Chen and Peilun Zhou and Zhaoyu Hu and Jiajun Chai and Derong Xu and Zhongni Hou and Yufei Zhang and Guojun Yin and Wei Lin and Zhi Zheng and Tong Xu},
+  year = {2026},
+  eprint = {2608.30685},
+  archivePrefix = {arXiv},
+  primaryClass = {cs.AI},
+  url = {https://arxiv.org/abs/2608.30685}
+}</code></pre>
+        <p class="citation-status" id="citation-status" role="status" aria-live="polite"></p>
+        <p class="publication-note">This citation follows the revised report. The arXiv link currently hosts the earlier release until the revision is uploaded.</p>
+        <noscript><p class="publication-note">Select and copy the BibTeX text above; automatic copying requires JavaScript.</p></noscript>
       </section>
 
     </main>
@@ -448,13 +512,10 @@
     <footer class="site-footer">
       <div class="shell footer-content">
         <a class="wordmark" href="#top" aria-label="Back to ATLAS home"><span class="wordmark-mark" aria-hidden="true">A</span><span>ATLAS</span></a>
-        <p>Dual-Horizon Diagnostic Evaluation for Industrial Tool-Use Agents</p>
-        <p>University of Science and Technology of China · Meituan</p>
+        <p>Dual-Horizon Diagnostic Evaluation for Tool-Use Agents in Meituan Xiaotuan</p>
+        <p>University of Science and Technology of <span class="text-tail">China · Meituan</span></p>
       </div>
     </footer>
 
-    <!-- Cloudflare Web Analytics -->
-    <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "f57509328ae9411ea1c254af696294d3"}'></script>
-    <!-- End Cloudflare Web Analytics -->
   </body>
 </html>

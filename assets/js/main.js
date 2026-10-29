@@ -1,4 +1,12 @@
 (() => {
+  if (window.location.hostname === 'atlas-eval.github.io') {
+    const analytics = document.createElement('script');
+    analytics.type = 'module';
+    analytics.src = 'https://static.cloudflareinsights.com/beacon.min.js';
+    analytics.dataset.cfBeacon = JSON.stringify({ token: 'f57509328ae9411ea1c254af696294d3' });
+    document.head.append(analytics);
+  }
+
   const header = document.querySelector('[data-site-header]');
   const toggle = document.querySelector('[data-menu-toggle]');
   const menu = document.querySelector('[data-site-menu]');
@@ -21,6 +29,31 @@
         toggle.setAttribute('aria-expanded', 'false');
         menu.classList.remove('is-open');
       });
+    });
+  }
+
+  const citationButton = document.querySelector('[data-copy-citation]');
+  const citationCode = document.querySelector('#bibtex');
+  const citationStatus = document.querySelector('#citation-status');
+
+  if (citationButton && citationCode && citationStatus) {
+    citationButton.addEventListener('click', async () => {
+      citationButton.disabled = true;
+      citationStatus.textContent = '';
+      try {
+        if (!navigator.clipboard?.writeText) throw new Error('Clipboard unavailable');
+        await navigator.clipboard.writeText(citationCode.textContent.trim());
+        citationStatus.textContent = 'BibTeX copied to clipboard.';
+      } catch {
+        const selection = window.getSelection();
+        const range = document.createRange();
+        range.selectNodeContents(citationCode);
+        selection?.removeAllRanges();
+        selection?.addRange(range);
+        citationStatus.textContent = 'Automatic copy is unavailable. The citation is selected; press Ctrl+C or ⌘C to copy.';
+      } finally {
+        citationButton.disabled = false;
+      }
     });
   }
 
